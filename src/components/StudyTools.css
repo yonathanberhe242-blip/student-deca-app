@@ -1,0 +1,255 @@
+/* Container Layout */
+.study-tools-wrapper {
+  margin-bottom: 40px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tool-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* --- CORNELL PAPER DESIGN (FIXED) --- */
+.cornell-paper {
+  border: 2px solid #333;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 800px;
+  margin-top: 20px;
+}
+
+.cornell-header {
+  border-bottom: 2px solid #333;
+  padding: 10px;
+}
+
+.cornell-header input {
+  width: 100%;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  outline: none;
+  text-align: center;
+}
+
+.cornell-body {
+  display: flex;
+  flex: 1;
+}
+
+.cornell-cues-column {
+  width: 30%;
+  border-right: 2px solid #333;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cornell-notes-column {
+  width: 70%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cornell-footer {
+  border-top: 2px solid #333;
+  height: 150px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cornell-paper textarea {
+  flex: 1;
+  width: 100%;
+  border: none;
+  resize: none;
+  outline: none;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  background: transparent;
+}
+
+.cornell-paper label {
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #667eea;
+  margin-bottom: 5px;
+}
+
+/* --- BLURT & FLASHCARDS --- */
+.blurt-split {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 25px;
+}
+
+.blurt-textarea {
+  width: 100%;
+  height: 250px;
+  padding: 15px;
+  border: 2px dashed #667eea;
+  border-radius: 12px;
+  resize: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.flashcard {
+  perspective: 1000px;
+  width: 100%;
+  height: 220px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.card-back {
+  background: #f5576c;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flash-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.next-btn {
+  flex: 3;
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.del-card-btn {
+  flex: 1;
+  background: #fee2e2;
+  color: #ef4444;
+  border: 1px solid #fecdd3;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* --- CARD MANAGER --- */
+.card-manager {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.card-manager h4 { margin: 0 0 10px 0; color: #667eea; }
+
+.card-manager input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.card-manager button {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* --- CHEAT SHEETS --- */
+.cheat-sheet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.sheet {
+  padding: 20px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  border-left: 5px solid #667eea;
+}
+
+.sheet h4 { margin-top: 0; color: #1e293b; }
+
+/* --- GRADE CALC --- */
+.calc-inputs { display: grid; gap: 15px; }
+.calc-inputs input { padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+.calc-btn { background: #667eea; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.result-box { margin-top: 20px; padding: 20px; background: #f0fdf4; border-radius: 12px; text-align: center; }
+.result-box h2 { font-size: 40px; color: #166534; margin: 0; }
+
+/* --- ESSAY CHECKLIST --- */
+.checklist-items { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
+.checklist-items label { display: flex; align-items: center; gap: 10px; font-size: 16px; cursor: pointer; }
+
+/* --- GLOBAL PDF & PRINT --- */
+.tool-header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.download-pdf-btn { background: #27ae60; color: white; border: none; padding: 10px 18px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+
+@media print {
+  .no-print, .header-section, .nav-buttons, .floating-timer-container, .card-manager {
+    display: none !important;
+  }
+  .cornell-paper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black !important;
+  }
+}
